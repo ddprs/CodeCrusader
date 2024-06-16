@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Crusader</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .hidden {
+            display: none;
+        }
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"], input[type="password"], select {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px 0;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .talent-tree {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .talent {
+            width: 120px;
+            height: 120px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #f9f9f9;
+            cursor: pointer;
+        }
+        .talent.selected {
+            background-color: #d4edda;
+            border-color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div id="loginScreen" class="container">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username"><br>
+        <input type="password" id="password" placeholder="Password"><br>
+        <button onclick="login()">Login</button>
+    </div>
+
+    <div id="characterCreationScreen" class="container hidden">
+        <h2>Character Creation</h2>
+        <label for="race">Select Race:</label><br>
+        <select id="race">
+            <option value="human">Human</option>
+            <option value="elf">Elf</option>
+            <option value="dwarf">Dwarf</option>
+        </select><br>
+        <label for="class">Select Class:</label><br>
+        <select id="class">
+            <option value="warrior">Warrior</option>
+            <option value="mage">Mage</option>
+            <option value="rogue">Rogue</option>
+        </select><br>
+        <button onclick="createCharacter()">Create Character</button>
+    </div>
+
+    <div id="talentTreeScreen" class="container hidden">
+        <h2>Talent Tree</h2>
+        <div id="talentTree" class="talent-tree"></div>
+        <button onclick="startGame()">Start Game</button>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
